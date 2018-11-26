@@ -53,7 +53,7 @@ $$ P(A|B) = \frac{ P(B|A) \times P(A) }{ P(B|A) \times P(A) + P(B|\sim A) \times
       plt.show()
   ```
   - 图片
-  <img src="BT_MLE_MAP/1.png">
+  <img src="BT_MLE_MAP/1.png" width=50>
   
 
 
