@@ -52,8 +52,66 @@ $$ P(A|B) = \frac{ P(B|A) \times P(A) }{ P(B|A) \times P(A) + P(B|\sim A) \times
       plt.ylabel('likelihood function value')
       plt.show()
   ```
-  - 图片
-  <img src="BT_MLE_MAP/1.png" width=500>
+  - 结果
+  <img src="BT_MLE_MAP/1.png" width=400>
+- 根据先验知识假定 P(θ) 为均值为0.5， 方差为0.1 的高斯函数，可以画出对应的概率密度图"
+  - 代码
+  ```python
+  def prior_value():
+      """根据先验知识假定 P(θ) 为均值为0.5， 方差为0.1 的高斯函数，所以可以画出 θ 和 P(θ) 的图像： 一个高斯分布的密度函数，密度越大可能性越大"""
+      def p_theta(u):
+          return 1/((2*math.pi*0.01)**(1/2))*math.exp(-(u-0.5)**2/(2*0.01))
+      x = [i*0.001 for i in range(0, 1000)]
+      y = [p_theta(i) for i in x]
+
+      print('对应最大概率密度的θ值是:', x[y.index(max(y))])
+
+      plt.plot(x, y)
+      plt.xlabel('θ')
+      plt.ylabel("p(θ)")
+      plt.show()
+  ```
+  - 结果
+    <img src="BT_MLE_MAP/prior_value.png" width=400>
+- $P(\theta)$ 的先验知识和似然函数$P(x_0 | \theta)$ 可以画出后验的图
+  - 代码 
+  ```python
+   """假定 p(θ) 满足均值为 0.5 方差为 0.1 的概率密度的情况下， 计算联合概率密度的值 p(xo|θ)*p(θ)， 联合概率反映了后验概率的数值大小 """
+    def p_theta(u):
+        return (1/((2*math.pi*0.01)**(1/2))*math.exp(-(u-0.5)**2/(2*0.01))) * (u**7 *(1-u)**3)
+    x = [i*0.001 for i in range(0, 1000)]
+    y = [p_theta(i) for i in x]
+
+    print('对应最大联合概率密度的θ值是:', x[y.index(max(y))])
+
+    plt.plot(x, y)
+    plt.xlabel('θ')
+    plt.ylabel("p(xo|θ)*p(θ)")
+    plt.show()
+  ```
+  - 结果
+  <img src="BT_MLE_MAP/map_value.png" width=400>
+- $P(\theta)$ 的先验知识和似然函数$P(x_0 | \theta)$ 通过多做几次实验可以得到更加准确的结果
+  - 代码
+  ```
+  def map_value100():
+    """ 实验了100次会得到的结果 """
+    def p_theta(u):
+        return (1/((2*math.pi*0.01)**(1/2))* math.exp(-(u-0.5)**2/(2*0.01))) * (u**7 *(1-u)**3)**70*(u**7 *(1-u)**3)**30
+
+    x = [i*0.001 for i in range(0, 1000)]
+    y = [p_theta(i) for i in x]
+
+    print('对应最大联合概率密度的θ值是:', x[y.index(max(y))])
+
+    plt.plot(x, y)
+    plt.xlabel('θ')
+    plt.ylabel("p(xo|θ)*p(θ)")
+    plt.show()
+  ```
+  - 结果
+  <img src="BT_MLE_MAP/map_value100.png" width=400>
+
   
 
 
