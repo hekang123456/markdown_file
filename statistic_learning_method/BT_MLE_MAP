@@ -7,6 +7,6 @@ date: 2018-11-26
 > 来源： https://blog.csdn.net/u011508640/article/details/72815981
 # 贝叶斯公式+最大似然估计(MLE)+最大后验概率公式(MAP)
 ## 1.贝叶斯公式
-$$ P(A|B) = \frac{ P(B|A) \tiems P(A) }{ P(B|A) \times P(A) + P(B|~A) \times P(~A) } $$
+$$ P(A|B) = \frac{ P(B|A) \times P(A) }{ P(B|A) \times P(A) + P(B|~A) \times P(~A) } $$
 - 作用： 
   - 你有多大把握
