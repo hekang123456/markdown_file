@@ -20,10 +20,46 @@ $$ P(A|B) = \frac{ P(B|A) \times P(A) }{ P(B|A) \times P(A) + P(B|\sim A) \times
 - 当 $x$ 是已知的情况下， $\theta$ 是变量， 这个函数叫做似然函数（likelihood function）, **用来描述对于不同的模型参数**， 这个样本点出现的概率是多少。 
 
 ## 3. 最大似然估计（maximum likelihood estimation : MLE）
-- 构造一个关于参数 $\theta$ 的函数， 这个函数用来表示在已知的一组实验中产生了一组实验数据 $x$ 的可能性。
+- 构造一个关于参数 $\theta$ 的函数， 这个函数用来表示在已知的一组实验中产生了一组实验数据 $x_0$ 的可能性。
   - 在抛硬币实验中，每次抛硬币出现正反的概率满足二项分布。
-  - 比如抛了10次，出现的一组实验数据 $x=[0111101110]$。 
+  - 比如抛了10次，出现的一组实验数据 $x_0=[0111101110]$。 
   - 似然函数为： $f(\theta) = ((1−\theta) × \theta × \theta × \theta × \theta × (1 − \theta)× \theta × \theta × \theta ×(1−\theta))=\theta^7 \times (1 - \theta)^3$
 - 计算使似然函数最大的参数值， 一般先取对数然后计算。
   - $\log f(\theta) = 7\log \theta + 3\log (1-\theta) $ 
-  - 求导可以得到
+  - 求导可以得到： $\frac{7-10\theta}{\theta (1-\theta)}$
+  - 可以得到当$\theta = 0.7$ 的时候能够得到最大值。
+## 4. 最大后验概率估计（maximum a posterior probability estimation: MAP）
+最大似然估计的目的是通过求解得到 $\theta$ 使得似然函数 $P(x_0|\theta)$ 达到最大。 而最大后验概率估计是在最大似然估计的情况下考虑先验概率分布$P(\theta)$ 。使得 $P(\theta) \times P(x_0 | \theta)$ 达到最大。 
+- 最大后验概率估计的目的其实是为了最大化后验： $P(\theta | x_0) = \frac{ P(x_0|\theta) \times P(\theta) }{P(x_0)} $ 因为 $P(x_0)$ 是可以通过做实验得到的。 所以只需要求解 $P(\theta) \times P(x_0 | \theta)$  使其最大。
+- 最大后验的名字来源于  $P(\theta | x_0)$ 就是要在已有实验数据的情况下求解最合理的参数。
+
+## 5. 一个简单的例子
+投硬币10次得到的结果是$x_0 = [0111101110]$
+- 最大似然函数， 上面已经说过了对应的似然函数是：  $f(\theta) =\theta^7 \times (1 - \theta)^3$
+  - 代码：
+  ```python
+  import math
+  import matplotlib.pyplot as plt
+  def mle_value():
+      """最大似然估计： x表示 θ 值"""
+      x = [0.001*i for i in range(0, 1000)]  # 不同的参数 θ 的值
+      y = [i**7 * (1-i)**3 for i in x]  # θ对应的似然函数值
+
+      print('对应最大值的θ是:', x[y.index(max(y))])
+
+      plt.plot(x, y)
+      plt.xlabel('θ')
+      plt.ylabel('likelihood function value')
+      plt.show()
+  ```
+  - 图片
+  <img src="BT_MLE_MAP/1.png">
+  
+
+
+
+
+
+
+
+
