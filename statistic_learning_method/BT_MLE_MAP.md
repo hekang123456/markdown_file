@@ -37,7 +37,7 @@ $$ P(A|B) = \frac{ P(B|A) \times P(A) }{ P(B|A) \times P(A) + P(B|\sim A) \times
 投硬币10次得到的结果是$x_0 = [0111101110]$
 - 最大似然函数， 上面已经说过了对应的似然函数是：  $f(\theta) =\theta^7 \times (1 - \theta)^3$
   - 代码：
-  ```python
+  ```Python
   import math
   import matplotlib.pyplot as plt
   def mle_value():
@@ -56,7 +56,7 @@ $$ P(A|B) = \frac{ P(B|A) \times P(A) }{ P(B|A) \times P(A) + P(B|\sim A) \times
   <img src="BT_MLE_MAP/1.png" width=400>
 - 根据先验知识假定 P(θ) 为均值为0.5， 方差为0.1 的高斯函数，可以画出对应的概率密度图"
   - 代码
-  ```python
+  ```Python
   def prior_value():
       """根据先验知识假定 P(θ) 为均值为0.5， 方差为0.1 的高斯函数，所以可以画出 θ 和 P(θ) 的图像： 一个高斯分布的密度函数，密度越大可能性越大"""
       def p_theta(u):
@@ -75,7 +75,7 @@ $$ P(A|B) = \frac{ P(B|A) \times P(A) }{ P(B|A) \times P(A) + P(B|\sim A) \times
     <img src="BT_MLE_MAP/prior_value.png" width=400>
 - $P(\theta)$ 的先验知识和似然函数$P(x_0 | \theta)$ 可以画出后验的图
   - 代码 
-  ```python
+  ```Python
    """假定 p(θ) 满足均值为 0.5 方差为 0.1 的概率密度的情况下， 计算联合概率密度的值 p(xo|θ)*p(θ)， 联合概率反映了后验概率的数值大小 """
     def p_theta(u):
         return (1/((2*math.pi*0.01)**(1/2))*math.exp(-(u-0.5)**2/(2*0.01))) * (u**7 *(1-u)**3)
@@ -93,7 +93,7 @@ $$ P(A|B) = \frac{ P(B|A) \times P(A) }{ P(B|A) \times P(A) + P(B|\sim A) \times
   <img src="BT_MLE_MAP/map_value.png" width=400>
 - $P(\theta)$ 的先验知识和似然函数$P(x_0 | \theta)$ 通过多做几次实验可以得到更加准确的结果
   - 代码
-  ```
+  ```Python
   def map_value100():
     """ 实验了100次会得到的结果 """
     def p_theta(u):
