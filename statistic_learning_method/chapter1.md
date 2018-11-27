@@ -134,6 +134,7 @@ tags: 损失函数， 风险函数， 期望风险， 期望损失， 经验风�
 # 6 分类问题
 - 评价指标
 <img src="chapter1/F1.png" width=400>
+
 - 精确率： $P = \frac{TP}{TP+FP}$
 - 召回率： $R = \frac{TP}{TP+FN}$
 - <font color="#dd0000"> $F_1$值：$\frac{2}{F_1} = \frac{1}{P} + \frac{1}{R}$ => $F_1 = \frac{2TP}{2TP+FP+FN}$ </font> 
