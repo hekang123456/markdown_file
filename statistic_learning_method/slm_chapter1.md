@@ -1,7 +1,7 @@
 ---
 title: 统计学习方法概论
 date: 2018-11-27
-categories: ML
+categories: [ML, 统计学习方法]
 ---
 # 1 统计学习
 ## 1.1 统计学习的特点
