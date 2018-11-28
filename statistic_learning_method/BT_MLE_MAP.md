@@ -5,7 +5,7 @@ tags: [贝叶斯公式， Bayes’ Theorem, 最大似然估计， 最大后验�
 date: 2018-11-26
 ---
 > 来源： https://blog.csdn.net/u011508640/article/details/7281598
-# 贝叶斯公式+最大似然估计(MLE)+最大后验概率公式(MAP)+贝叶斯估计（）
+# 贝叶斯公式+最大似然估计(MLE)+最大后验概率公式(MAP)+贝叶斯估计
 ## 1.贝叶斯公式
 $$ P(A|B) = \frac{ P(B|A) \times P(A) }{ P(B|A) \times P(A) + P(B|\sim A) \times P(\sim A) } $$
 - 作用： 
