@@ -1,8 +1,3 @@
----
-title: $k$ 近邻法
-date: 2018-11-29
-categories: [ML, 统计学习方法]
----
 # 1 $k$ 近邻法
 - $k$ 近邻法的三个基本要素： $k$值的选择， 距离度量， 分类决策规则
 ## 1.1 $k$ 近邻算法
@@ -23,13 +18,18 @@ $$
 
 ## 1.2 距离度量
 - $L_p$ 距离
-$$
-L_p (x_i, x_j) = \left( \sum\limits_{l=1}^n | x_i^{(l)} -x_j^{(l)} |^p \right)^{\frac{1}{p}}
-$$
-这里的$p\geq 1$,当$p$取不同的值的时候会得到不同的距离。
-​	- 当 $p=2$时， 称为欧式距离（Euclidean distance）
-​	- 当 $p=1$时， 称为曼哈顿距离（Manhattan distance）
-​	- 当 $p=\infty$时， 取各个坐标距离的最大值，即 $L_{\infty} (x_i, x_j) = \max\limits_l |x_i^{(l)}-x_j^{(l)}|$
+    $$
+    L_p (x_i, x_j) = \left( \sum\limits_{l=1}^n | x_i^{(l)} -x_j^{(l)} |^p \right)^{\frac{1}{p}}
+    $$
+	这里的$p\geq 1$,当$p​$取不同的值的时候会得到不同的距离。
+	- 当 $p=2$时， 称为欧式距离（Euclidean distance）
+	- 当 $p=1$时， 称为曼哈顿距离（Manhattan distance）
+	- 当 $p=\infty$时， 取各个坐标距离的最大值，即 $L_{\infty} (x_i, x_j) = \max\limits_l |x_i^{(l)}-x_j^{(l)}|$
 
 ## 1.3 $k$ 值的选择
 - 在应用中，$ k$值一般取一个比较小的数值。 通常采用交叉验证法来选取最优的$k$值.
+
+
+
+
+
