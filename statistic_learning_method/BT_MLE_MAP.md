@@ -26,7 +26,7 @@ $$ P(A|B) = \frac{ P(B|A) \times P(A) }{ P(B|A) \times P(A) + P(B|\sim A) \times
   - 比如抛了10次，出现的一组实验数据 $x_0=[0111101110]$。 
   - 似然函数为： $f(\theta) = ((1−\theta) × \theta × \theta × \theta × \theta × (1 − \theta)× \theta × \theta × \theta ×(1−\theta))=\theta^7 \times (1 - \theta)^3$
 - 计算使似然函数最大的参数值， 一般先取对数然后计算。
-  - $\log f(\theta) = 7\log \theta + 3\log (1-\theta) $ 
+  - $\log f(\theta) = 7\log \theta + 3\log (1-\theta)$ 
   - 求导可以得到： $\frac{7-10\theta}{\theta (1-\theta)}$
   - 可以得到当$\theta = 0.7$ 的时候能够得到最大值。
 ## 4. 最大后验概率估计（maximum a posterior probability estimation: MAP）
