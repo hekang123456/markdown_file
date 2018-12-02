@@ -1,6 +1,6 @@
 ---
 title: $k$ 近邻法
-date: 2018-12-02
+date: 2018-12-01
 categories: [ML, 统计学习方法]
 tags: [$k$近邻法]
 ---
