@@ -4,7 +4,7 @@
 - pycharm 中开启代码的自动补全提示
 File-->Power Save Model 钩去掉
 
-- pycharm 中开始鼠标悬停对函数和对象的提示 （参数和注释信息）
+- pycharm 中开始鼠标悬停对函数和对象的提示 （参数和注释信息   
 File-->Setting-->General-->Other-->Show quick documentation on mouse move 
 在之前打勾， 设置延迟时间大概1000ms左右吧。
 
